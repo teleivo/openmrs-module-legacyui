@@ -51,6 +51,7 @@
 		</td>
 		<td class="description"><openmrs:message code="ConceptSource.description.help"/></td>
 	</tr>
+	// TODO
 	<c:if test="${conceptSource.creator != null}">
 		<tr>
 			<td><openmrs:message code="general.createdBy" /></td>
@@ -67,6 +68,11 @@
            <td colspan="${fn:length(locales)}"><font color="#D0D0D0"><sub>${conceptSource.uuid}</sub></font></td>
          </c:if>
    </tr>
+    <c:if test="${conceptSource.conceptSourceId == null}">
+        <br/>
+        <input type="submit" value='<openmrs:message code="general.save"/>' name="save"/>
+        </form>
+    </c:if>
 </table>
 </fieldset>
 
